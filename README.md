@@ -13,7 +13,7 @@ The Movies are Presented in Beautiful Cards and Website is Completely Responsive
 ## Table of Contents
 
 - [Features](#features)
-- [Tools and Technologies](#tools and technologies)
+- [Tools and Technologies](#toolsandtechnologies)
 - [Installation](#installation)
 - [API](#api)
 - [Usage](#usage)
