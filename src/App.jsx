@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import Movie from "./Components/movie";
 
-// OMDB Movies API
-const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=3b727a19";
+const API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=YOUR_API_KEY";
 
 export default function App() {
   const [movie, setMovie] = useState([]);

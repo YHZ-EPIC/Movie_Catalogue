@@ -1,2 +1,87 @@
-# MovieApp
+<font style="color:#fff; font-family: 'Bebas Neue'; 
+font-size: 3.5ch">
+
+# Movie Catalogue App
  Search Movies from Movie API using ReactJS
+
+Welcome to the Movies Catalogue React App! \
+This Application allows Users to Browse and Search for Movies using Data Fetched from an API. \
+The Movies are Presented in Beautiful Cards and Website is Completely Responsive for an Enhanced User Experience.
+
+![Screenshot](screenshot.png)
+
+## Table of Contents
+
+- [Features](#features)
+- [Tools and Technologies](#tools)
+- [Installation](#installation)
+- [API](#api)
+- [Usage](#usage)
+- [License](#license)
+
+## Features
+
+- Fetches Movie Data from API.
+- Displays Movies in Visually Appealing Cards.
+- Allows Users to Search for Movies.
+- Responsive Design for Various Screen Sizes.
+
+## Tools and Technologies
+- IDE : VS Code
+- Framework : React
+- Language : Javascript
+- Styling : Tailwind CSS
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/YHZ-EPIC/Movies_Catalogue.git
+
+2. Navigate to the project directory:
+    ```bash
+    cd Movies_Catalogue
+
+2. Install dependencies:
+    ```bash
+    npm install
+
+## API
+
+* OMDb API
+
+- The OMDb API is a RESTful web service to obtain movie information, \
+all content and images on the site are contributed and maintained by the users.
+
+- You will need to sign up for an account and obtain an API key to use this app effectively.
+
+- This API Provides the Following Information,
+
+    1) Poster
+    2) Title
+    3) Type
+    4) Year
+    5) ID
+
+
+## Usage
+
+1. Obtain an API key from OMDb Movie API Provider and replace 'YOUR_API_KEY' in the src/App.jsx file with your actual API key.
+
+2. Start the development server:
+    ```bash
+    npm run dev
+
+3. Hold Ctrl Key and Click on
+the localhost link generated on Terminal \
+which will open your Browser. You can now use the App.
+
+## License
+
+This project is licensed under the MIT License.
+
+Feel free to reach out to us if you have any questions or suggestions. \
+Enjoy using the Movie Catalogue React App.
+
+</font>
