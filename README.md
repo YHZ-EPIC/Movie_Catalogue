@@ -67,7 +67,8 @@ all content and images on the site are contributed and maintained by the users.
 
 ## Usage
 
-1. Obtain an API key from OMDb Movie API Provider and replace 'YOUR_API_KEY' in the src/App.jsx file with your actual API key.
+1. Obtain an API key from OMDb Movie API Provider and replace 'YOUR_API_KEY' \
+in the src/App.jsx file with your actual API key.
 
 2. Start the development server:
     ```bash
