@@ -4,7 +4,8 @@ font-size: 3.5ch">
 # Movie Catalogue App
 Search Movies from Movie API using ReactJS
 
-<b> --> Visit This Website : </b> https://movie-catalogue-beta.vercel.app/
+<b> --> Visit This Website : </b> https://movie-catalogue-beta.vercel.app/ (VERSION 1) <br>
+<b> --> Visit This Website : </b> https://movie-catalogue-fff3.vercel.app/ (VERSION 2) <br>
 
 Welcome to the Movies Catalogue React App! <br>
 This Application allows Users to Browse and Search for Movies using Data Fetched from an API. <br>
