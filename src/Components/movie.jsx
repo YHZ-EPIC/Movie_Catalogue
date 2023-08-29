@@ -1,5 +1,21 @@
 /* eslint-disable react/prop-types */
-export default function Movie({ myData }) {
+const formatRating = (rating) => {
+  const formattedRating = rating.toFixed(2);
+  const lastChar = formattedRating.charAt(formattedRating.length - 1);
+
+  if (lastChar === "0" || lastChar === ".") {
+    return formattedRating.slice(0, -1);
+  }
+
+  return formattedRating;
+};
+
+export default function Movie({ myData, genres, trailer }) {
+  const releaseYear = new Date(myData.release_date).getFullYear();
+  // const Rating = myData.vote_average.toFixed(2);
+  const Rating = formatRating(myData.vote_average);
+  // console.log("\n Rating : ", Rating);
+
   return (
     <div className="Movie">
       <div className="flex flex-wrap flex--movie p-4 justify-center items-center">
@@ -8,41 +24,47 @@ export default function Movie({ myData }) {
           <div className="md:flex-shrink-0">
             <img
               className="md:w-56"
+              // src={
+              //   myData.poster_path !== "N/A"
+              // ? img_path
+              //     : "https://via.placeholder.com/400"
+              // }
+              // alt={myData.Title}
+
               src={
-                myData.Poster !== "N/A"
-                  ? myData.Poster
+                myData.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${myData.poster_path}`
                   : "https://via.placeholder.com/400"
               }
-              alt={myData.Title}
+              alt={`${myData.title} Poster`}
             />
           </div>
 
           <div className="flex flex-col flex-grow px-8 py-4 bg-color-333">
             {/* Title  */}
             <h3 className="font-bold text-4xl md:text-2xl lg:text-2xl text-gray-200 movie--title">
-              {myData.Title}
+              {myData.title}
             </h3>
 
             {/* Year and Type */}
-            <span className="font-bold text-lg lg:text-sm lg:mb-4 text-gray-400 movie--type">
-              {myData.Year} <br />
-              {myData.Type.toUpperCase()}
+            <span className="font-bold text-justify text-gray-400 movie--type">
+              {/* {myData.Year} <br /> */}
+              {/* {myData.Type.toUpperCase()} */}
+              {releaseYear ? releaseYear : "N/A"} <br />
+              Rating : {Rating} <br />
+              Genre : {myData.genre_ids.map(id => genres[id]).join(', ')}
             </span>
 
             {/* Synopsis  */}
-            <div className="flex-grow">
-              <p className="text-xl md:text-base lg:text-base text-gray-100 leading-snug truncate-overflow">
-                {
-                  "Explore Hollywood's Realm of Captivating Stories, Spanning Genres from Action Packed Adventures to Heartfelt Romances, Sci-fi Wonders to Thought-Provoking Dramas. With Diverse Characters Navigating Challenges and Growth, these Films Entertain, Inspire, and Transport Audiences to Imaginary Worlds."
-                }
-              </p>
-            </div>
+            <div className="flex-grow text-justify mt-4">{myData.overview}</div>
 
             {/* Buttons  */}
             <div className="button-container flex justify-between">
-              <button>More Info</button>
+              <button onClick={() => trailer}>
+                More Info
+              </button>
               <button className="bg-orange-200 text-orange-700">
-                Add to List
+                Add to Watch List
               </button>
             </div>
           </div>
