@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // base: "./Movie_Catalogue",
   plugins: [react()],
+  rollupOptions: {
+    external: ['axios']
+  }
 })
