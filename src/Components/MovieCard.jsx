@@ -1,4 +1,8 @@
 /* eslint-disable react/prop-types */
+
+import { useState } from "react";
+import MovieTrailer from "./MovieTrailer";
+
 const formatRating = (rating) => {
   const formattedRating = rating.toFixed(2);
   const lastChar = formattedRating.charAt(formattedRating.length - 1);
@@ -10,11 +14,11 @@ const formatRating = (rating) => {
   return formattedRating;
 };
 
-export default function Movie({ myData, genres, trailer }) {
+export default function Movie({ myData, genres, apiKey }) {
   const releaseYear = new Date(myData.release_date).getFullYear();
-  // const Rating = myData.vote_average.toFixed(2);
   const Rating = formatRating(myData.vote_average);
-  // console.log("\n Rating : ", Rating);
+
+  const [isClick, setIsClick] = useState(false);
 
   return (
     <div className="Movie">
@@ -52,7 +56,7 @@ export default function Movie({ myData, genres, trailer }) {
               {/* {myData.Type.toUpperCase()} */}
               {releaseYear ? releaseYear : "N/A"} <br />
               Rating : {Rating} <br />
-              Genre : {myData.genre_ids.map(id => genres[id]).join(', ')}
+              Genre : {myData.genre_ids.map((id) => genres[id]).join(", ")}
             </span>
 
             {/* Synopsis  */}
@@ -60,9 +64,11 @@ export default function Movie({ myData, genres, trailer }) {
 
             {/* Buttons  */}
             <div className="button-container flex justify-between">
-              <button onClick={() => trailer}>
-                More Info
-              </button>
+              <button onClick={() => {
+                setIsClick(true);
+              }}>More Info</button>
+
+
               <button className="bg-orange-200 text-orange-700">
                 Add to Watch List
               </button>
@@ -70,6 +76,7 @@ export default function Movie({ myData, genres, trailer }) {
           </div>
         </div>
       </div>
+      {isClick && <MovieTrailer movieId={myData.id} apiKey={apiKey} /> }
     </div>
   );
 }
