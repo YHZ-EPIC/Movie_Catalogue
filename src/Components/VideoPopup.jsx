@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const VideoPopup = ({ title, trailerKey }) => {
+export default function VideoPopup({ title, videoKey }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
@@ -44,11 +44,11 @@ const VideoPopup = ({ title, trailerKey }) => {
               </div>
               <iframe
                 src={
-                  trailerKey
-                    ? `https://www.youtube.com/embed/${trailerKey}`
-                    : "https://via.placeholder.com/400"
+                  videoKey
+                    ? `https://www.youtube.com/embed/${videoKey}`
+                    : "https://via.placeholder.com/1280%20x%20720"
                 }
-                title="Video"
+                title={title}
                 className="w-full aspect-video"
                 allowFullScreen
               />
@@ -58,6 +58,4 @@ const VideoPopup = ({ title, trailerKey }) => {
       )}
     </>
   );
-};
-
-export default VideoPopup;
+}

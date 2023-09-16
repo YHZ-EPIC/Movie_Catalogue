@@ -11,7 +11,6 @@ export default function App() {
   const [genres, setGenres] = useState({});
   const [searchTitle, setSearchTitle] = useState("");
   const [section, setSection] = useState("Discover");
-  // const [selectedMovie, setSelectedMovie] = useState(null);
 
   // Discover
   useEffect(() => {
@@ -65,10 +64,6 @@ export default function App() {
       Query = `https://api.themoviedb.org/3/search/movie?query=${displayTitle}&api_key=${apiKey}`;
     }
 
-    // console.log("\n Title : ", title);
-    // console.log("\n Formatted Title : ", formattedTitle);
-    // console.log("Search Query : ", Query);
-
     axios
       .get(Query)
       .then((response) => {
@@ -111,7 +106,7 @@ export default function App() {
 
       {movie.map((movie) => (
         <li key={movie.id} className="list-none">
-          <Movie myData={movie} genres={genres} apiKey = {apiKey} />
+          <Movie myData={movie} genres={genres} apiKey={apiKey} />
         </li>
       ))}
     </>
