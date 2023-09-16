@@ -1,7 +1,8 @@
-/* eslint-disable react/prop-types */
-
-import { useState } from "react";
-import MovieTrailer from "./MovieTrailer";
+import { useState, useEffect } from "react";
+import axios from "axios";
+// import MovieTrailer from "./MovieTrailer";
+// import VideoModal from "./VideoModal";
+import VideoPopup from "./VideoPopup";
 
 const formatRating = (rating) => {
   const formattedRating = rating.toFixed(2);
@@ -14,11 +15,33 @@ const formatRating = (rating) => {
   return formattedRating;
 };
 
+// export default function Movie({ myData, genres, apiKey })
+
 export default function Movie({ myData, genres, apiKey }) {
   const releaseYear = new Date(myData.release_date).getFullYear();
   const Rating = formatRating(myData.vote_average);
 
-  const [isClick, setIsClick] = useState(false);
+  // const [isClick, setIsClick] = useState(false);
+
+  const [trailerKey, setTrailerKey] = useState("");
+  const API_URL = `http://api.themoviedb.org/3/movie/${myData.id}/videos?api_key=${apiKey}`;
+
+  useEffect(() => {
+    const fetchTrailer = async () => {
+      try {
+        const response = await axios.get(API_URL);
+
+        // Assuming the first result is the trailer, you can customize this logic.
+        if (response.data.results.length > 0) {
+          setTrailerKey(response.data.results[0].key);
+        }
+      } catch (error) {
+        console.error("Error fetching trailer:", error);
+      }
+    };
+
+    fetchTrailer();
+  });
 
   return (
     <div className="Movie">
@@ -64,10 +87,13 @@ export default function Movie({ myData, genres, apiKey }) {
 
             {/* Buttons  */}
             <div className="button-container flex justify-between">
-              <button onClick={() => {
+              {/* <button onClick={() => {
                 setIsClick(true);
-              }}>More Info</button>
+              }}>More Info</button> */}
 
+              {/* <VideoModal /> */}
+
+              <VideoPopup title={myData.title} trailerKey={trailerKey} />
 
               <button className="bg-orange-200 text-orange-700">
                 Add to Watch List
@@ -76,7 +102,8 @@ export default function Movie({ myData, genres, apiKey }) {
           </div>
         </div>
       </div>
-      {isClick && <MovieTrailer movieId={myData.id} apiKey={apiKey} /> }
+      {/* {isClick && <VideoModal isOpen={isClick} /> } */}
+      {/* {isClick && <MovieTrailer movieId={myData.id} apiKey={apiKey} /> } */}
     </div>
   );
 }
