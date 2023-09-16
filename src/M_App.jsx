@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Movie from "./Components/movie";
+import Movie from "./Components/Movie";
 
 const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=3b727a19";
 

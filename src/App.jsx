@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Movie from "./Components/movie";
+import Movie from "./Components/MovieCard";
 
 // TMDB API
 const apiKey = import.meta.env.VITE_API_KEY;
@@ -11,13 +11,14 @@ export default function App() {
   const [genres, setGenres] = useState({});
   const [searchTitle, setSearchTitle] = useState("");
   const [section, setSection] = useState("Discover");
+  // const [selectedMovie, setSelectedMovie] = useState(null);
 
   // Discover
   useEffect(() => {
     axios
       .get(API_URL)
       .then((response) => {
-        console.log(response.data.results); // Log the fetched data
+        console.log("\n --> Movies Data : ", response.data.results); // Log the fetched data
         setMovie(response.data.results);
       })
       .catch((error) => console.error(error));
@@ -71,26 +72,10 @@ export default function App() {
     axios
       .get(Query)
       .then((response) => {
-        console.log(response.data.results); // Log the fetched data
+        console.log("\n --> Searched Movies : ", response.data.results); // Log the fetched data
         setMovie(response.data.results);
       })
       .catch((error) => console.error(error));
-  };
-
-  const fetchTrailerLinks = async (movieId) => {
-    const trailerUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&language=en-US`;
-
-    try {
-      const response = await axios.get(trailerUrl);
-      const videos = response.data.results;
-      const trailerLinks = videos
-        .filter((video) => video.type === "Trailer")
-        .map((video) => `https://www.youtube.com/watch?v=${video.key}`);
-
-      console.log(trailerLinks); // Array of trailer links
-    } catch (error) {
-      console.error(error);
-    }
   };
 
   return (
@@ -120,17 +105,13 @@ export default function App() {
         </button>
       </div>
 
-      {/* <span>
-        <p>Genres: {movie.genre_ids.map(id => genres[id]).join(', ')}</p>
-      </span> */}
-
       <h2 className="text-4xl font-bold text-center p-4 pb-0 m-4 mb-0 text-orange-500">
         {section}
       </h2>
 
       {movie.map((movie) => (
         <li key={movie.id} className="list-none">
-          <Movie myData={movie} genres={genres} trailer = {fetchTrailerLinks(movie.id)} />
+          <Movie myData={movie} genres={genres} apiKey = {apiKey} />
         </li>
       ))}
     </>
