@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import MovieTrailer from "./MovieTrailer";
-// import VideoModal from "./VideoModal";
 import VideoPopup from "./VideoPopup";
 
 const formatRating = (rating) => {
@@ -15,14 +13,9 @@ const formatRating = (rating) => {
   return formattedRating;
 };
 
-// export default function Movie({ myData, genres, apiKey })
-
 export default function Movie({ myData, genres, apiKey }) {
   const releaseYear = new Date(myData.release_date).getFullYear();
   const Rating = formatRating(myData.vote_average);
-
-  // const [isClick, setIsClick] = useState(false);
-
   const [trailerKey, setTrailerKey] = useState("");
   const API_URL = `http://api.themoviedb.org/3/movie/${myData.id}/videos?api_key=${apiKey}`;
 
@@ -51,13 +44,6 @@ export default function Movie({ myData, genres, apiKey }) {
           <div className="md:flex-shrink-0">
             <img
               className="md:w-56"
-              // src={
-              //   myData.poster_path !== "N/A"
-              // ? img_path
-              //     : "https://via.placeholder.com/400"
-              // }
-              // alt={myData.Title}
-
               src={
                 myData.poster_path
                   ? `https://image.tmdb.org/t/p/w500${myData.poster_path}`
@@ -75,8 +61,6 @@ export default function Movie({ myData, genres, apiKey }) {
 
             {/* Year and Type */}
             <span className="font-bold text-justify text-gray-400 movie--type">
-              {/* {myData.Year} <br /> */}
-              {/* {myData.Type.toUpperCase()} */}
               {releaseYear ? releaseYear : "N/A"} <br />
               Rating : {Rating} <br />
               Genre : {myData.genre_ids.map((id) => genres[id]).join(", ")}
@@ -87,13 +71,7 @@ export default function Movie({ myData, genres, apiKey }) {
 
             {/* Buttons  */}
             <div className="button-container flex justify-between">
-              {/* <button onClick={() => {
-                setIsClick(true);
-              }}>More Info</button> */}
-
-              {/* <VideoModal /> */}
-
-              <VideoPopup title={myData.title} trailerKey={trailerKey} />
+              <VideoPopup title={myData.title} videoKey={trailerKey} />
 
               <button className="bg-orange-200 text-orange-700">
                 Add to Watch List
@@ -102,8 +80,6 @@ export default function Movie({ myData, genres, apiKey }) {
           </div>
         </div>
       </div>
-      {/* {isClick && <VideoModal isOpen={isClick} /> } */}
-      {/* {isClick && <MovieTrailer movieId={myData.id} apiKey={apiKey} /> } */}
     </div>
   );
 }
