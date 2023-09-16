@@ -2,11 +2,10 @@
 font-size: 3.5ch">
 
 # Movie Catalogue App
+
 Search Movies from Movie API using ReactJS
 
-<b> --> Visit This Website : </b> https://movie-catalogue-beta.vercel.app/ (VERSION 1) <br>
-<b> --> Visit This Website : </b> https://movie-catalogue-fff3.vercel.app/ (VERSION 2) <br>
-<b> --> Visit This Website : </b> https://movie-catalogue-v3.vercel.app/ (VERSION 3) <br>
+<b> --> Visit This Website : </b> https://movies-catalogue-yhz.vercel.app/ <br>
 
 Welcome to the Movies Catalogue React App! <br>
 This Application allows Users to Browse and Search for Movies using Data Fetched from an API. <br>
@@ -28,7 +27,7 @@ The Movies are Presented in Beautiful Cards and Website is Completely Responsive
 
 - This React Project is built using Tailwind CSS with Vite.
 - To Create this Project, Follow Mentioned Steps <br>
-in the Official TailwindCSS Documentation,
+  in the Official TailwindCSS Documentation,
 
 --> https://tailwindcss.com/docs/guides/vite
 
@@ -52,40 +51,46 @@ in the Official TailwindCSS Documentation,
 
    ```bash
    git clone https://github.com/YHZ-EPIC/Movies_Catalogue.git
+   ```
+
 2. Navigate to the project directory:
-    ```bash
-    cd Movies_Catalogue
-2. Install dependencies:
-    ```bash
-    npm install
+   ```bash
+   cd Movies_Catalogue
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
 ## API
 
-* OMDb API
+- OMDb API
 
-- The OMDb API is a RESTful web service to obtain movie information, <br>
-all content and images on the site are contributed and maintained by the users.
+* The OMDb API is a RESTful web service to obtain movie information, <br>
+  all content and images on the site are contributed and maintained by the users.
 
-- You will need to sign up for an account and obtain an API key to use this app effectively.
+* You will need to sign up for an account and obtain an API key to use this app effectively.
 
-- This API Provides the Following Information,
+* This API Provides the Following Information,
 
-    1) Poster
-    2) Title
-    3) Type
-    4) Year
-    5) ID
+  1. Poster
+  2. Title
+  3. Type
+  4. Year
+  5. ID
 
 ## Usage
 
 1. Obtain an API key from OMDb Movie API Provider and replace 'YOUR_API_KEY' <br>
-in the src/App.jsx file with your actual API key.
+   in the src/App.jsx file with your actual API key.
 
 2. Start the development server:
-    ```bash
-    npm run dev
+   ```bash
+   npm run dev
+   ```
 3. Hold Ctrl Key and Click on
-the localhost link generated on Terminal <br>
-which will open your Browser. You can now use the App.
+   the localhost link generated on Terminal <br>
+   which will open your Browser. You can now use the App.
 
 ## License
 
