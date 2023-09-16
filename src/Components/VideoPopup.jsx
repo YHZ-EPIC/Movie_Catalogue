@@ -46,7 +46,7 @@ export default function VideoPopup({ title, videoKey }) {
                 src={
                   videoKey
                     ? `https://www.youtube.com/embed/${videoKey}`
-                    : "https://via.placeholder.com/1260x775"
+                    : "https://via.placeholder.com/1240x690"
                 }
                 title={title}
                 className="w-full aspect-video"
