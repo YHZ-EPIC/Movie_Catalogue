@@ -49,8 +49,10 @@ export default function VideoPopup({ title, videoKey }) {
                     : "https://www.youtube.com/embed/iik25wqIuFo"
                 }
                 title={title}
-                className="w-full aspect-video"
+                loading="lazy"
                 allowFullScreen
+                className="w-full aspect-video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               />
             </div>
           </div>
