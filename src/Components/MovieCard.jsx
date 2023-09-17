@@ -14,7 +14,7 @@ const formatRating = (rating) => {
 };
 
 export default function Movie({ myData, genres, apiKey }) {
-  const API_URL = `http://api.themoviedb.org/3/movie/${myData.id}/videos?api_key=${apiKey}`;
+  const API_URL = `https://api.themoviedb.org/3/movie/${myData.id}/videos?api_key=${apiKey}`;
   const releaseYear = new Date(myData.release_date).getFullYear();
   const Rating = formatRating(myData.vote_average);
   const [trailerKey, setTrailerKey] = useState("");
