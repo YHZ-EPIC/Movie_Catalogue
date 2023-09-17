@@ -2,6 +2,8 @@ import { useState } from "react";
 
 export default function VideoPopup({ title, videoKey }) {
   const [isOpen, setIsOpen] = useState(false);
+  console.log("Video Key Here : ", videoKey);
+  console.log("Embedded URL : " + `https://www.youtube.com/embed/${videoKey}`);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);

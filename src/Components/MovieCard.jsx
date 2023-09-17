@@ -30,20 +30,6 @@ export default function Movie({ myData, genres, apiKey }) {
       .catch((error) =>
         console.error("Error Fetching Video Trailer : ", error)
       );
-    // const fetchTrailer = async () => {
-    //   try {
-    //     const response = await axios.get(API_URL);
-
-    //     // Assuming the first result is the trailer, you can customize this logic.
-    //     if (response.data.results.length > 0) {
-    //       setTrailerKey(response.data.results[0].key);
-    //     }
-    //   } catch (error) {
-    //     console.error("Error Fetching Trailer:", error);
-    //   }
-    // };
-
-    // fetchTrailer();
   });
 
   return (
