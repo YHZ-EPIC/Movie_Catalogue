@@ -11,8 +11,11 @@ Welcome to the Movies Catalogue React App! <br>
 This Application allows Users to Browse and Search for Movies using Data Fetched from an API. <br>
 The Movies are Presented in Beautiful Cards and Website is Completely Responsive for an Enhanced User Experience.
 
-![Screenshot](./assets/Old.png) (OLD Version)
-![Alt text](./assets/Latest.png) (Latest Version)
+(OLD Version)
+![Screenshot](./assets/Old.png)
+<br>
+(Latest Version)
+![Alt text](./assets/Latest.png)
 
 ## Table of Contents
 
