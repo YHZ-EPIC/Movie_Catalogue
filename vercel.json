@@ -1,9 +1,5 @@
 {
-    "rewrites": [
-      {
-        "source": "/(.*)",
-        "status": 404,
-        "destination": "/src/Components/Error.jsx"
-      }
-    ]
-  }
+  "rewrites":  [
+    {"source": "^/(?!$|list$).*", "destination": "/src/Components/Error.js"}
+  ]
+}
