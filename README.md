@@ -14,8 +14,14 @@ The Movies are Presented in Beautiful Cards and Website is Completely Responsive
 (OLD Version)
 ![Screenshot](./assets/Old.png)
 <br>
+(Previous Version)
+![Alt text](./assets/Version_4.png)
+<br>
 (Latest Version)
-![Alt text](./assets/Latest.png)
+![Alt text](./assets/Version_5.png)
+<br>
+(WatchList)
+![Alt text](./assets/V_5_WatchList.png)
 
 ## Table of Contents
 
@@ -39,8 +45,13 @@ The Movies are Presented in Beautiful Cards and Website is Completely Responsive
 
 - Fetches Movie Data from API.
 - Displays Movies in Visually Appealing Cards.
-- Allows Users to Search for Movies.
 - Responsive Design for Various Screen Sizes.
+- Allows Users to,
+  1.  Search for Movies
+  2.  Play Trailer
+  3.  Add to Watch List
+  4.  Navigate using Navbar
+  5.  Remove from Watch List
 
 ## Tools
 
@@ -68,20 +79,29 @@ The Movies are Presented in Beautiful Cards and Website is Completely Responsive
 
 ## API
 
-- OMDb API
+- **TMDB API** :
+  TMDB API Provides access to an Immense Database of Movies and TV Shows.
 
-* The OMDb API is a RESTful web service to obtain movie information, <br>
-  all content and images on the site are contributed and maintained by the users.
+- This API Provides the Following Information,
 
-* You will need to sign up for an account and obtain an API key to use this app effectively.
+  1.  Titles
+  2.  Poster
+  3.  Release Dates
+  4.  Synopsis
+  5.  Genres
+  6.  Trailer & so on...
 
-* This API Provides the Following Information,
+- **API Key Required**: To use the TMDB API, you must obtain an API key by
+  registering on the TMDB website. This key is necessary for authentication
+  and access to the data.
 
-  1. Poster
-  2. Title
-  3. Type
-  4. Year
-  5. ID
+- **Flexible Endpoints**: The API offers various endpoints to meet your needs,
+  including Movie and TV Show details, Search Functionality, Trending Movies,
+  Cast and Crew details and Genre information.
+
+- **Rate Limiting**: TMDB API imposes rate limits to prevent misuse. These limits
+  may vary depending on your subscription level, so it's essential to check
+  the API documentation for current rate limit information.
 
 ## Usage
 

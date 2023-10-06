@@ -13,7 +13,7 @@ const formatRating = (rating) => {
   return formattedRating;
 };
 
-export default function Movie({ myData, genres, apiKey }) {
+export default function Movie({ myData, genres, apiKey, onClick }) {
   const API_URL = `https://api.themoviedb.org/3/movie/${myData.id}/videos?api_key=${apiKey}`;
   const releaseYear = new Date(myData.release_date).getFullYear();
   const Rating = formatRating(myData.vote_average);
@@ -30,7 +30,7 @@ export default function Movie({ myData, genres, apiKey }) {
       .catch((error) =>
         console.error("Error Fetching Video Trailer : ", error)
       );
-  });
+  }, [API_URL]);
 
   return (
     <div className="Movie">
@@ -69,7 +69,10 @@ export default function Movie({ myData, genres, apiKey }) {
             <div className="button-container flex justify-between">
               <VideoPopup title={myData.title} videoKey={trailerKey} />
 
-              <button className="bg-orange-200 text-orange-700">
+              <button
+                className="bg-orange-200 text-orange-700"
+                onClick={() => onClick(myData)}
+              >
                 Add to Watch List
               </button>
             </div>
