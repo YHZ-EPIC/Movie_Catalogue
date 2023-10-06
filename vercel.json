@@ -1,7 +1,11 @@
 {
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/list",
+      "destination": "/index.html"
+    },
+    {
+      "source": ".*",
       "destination": "/"
     }
   ]
