@@ -1,5 +1,7 @@
 {
-  "rewrites":  [
-    {"source": "^/(?!$|list$).*", "destination": "/"}
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/list", "dest": "/" },
+    { "src": "/*", "dest": "/" }
   ]
 }
