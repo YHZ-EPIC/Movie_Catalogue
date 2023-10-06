@@ -1,6 +1,0 @@
-// Added Navbar
-// Added Add to WatchList (Only Console.log level) => YET TO TEST IF ACTUALLY IT WORKS
-// IF IT ACTUALLY STORES THE DATA OF MOVIES I CLICK FOR WATCH LATER XD
-
-// Somehow gotta deliver this data to WatchList Component,
-// But it could only be called by NavBar and Data is within Home Component
