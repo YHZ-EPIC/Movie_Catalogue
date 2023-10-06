@@ -1,12 +1,8 @@
 {
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/list",
-      "destination": "/index.html"
-    },
-    {
-      "source": ".*",
-      "destination": "/"
+      "source": "/(.*)",
+      "destination": "https://vercel.com/docs"
     }
   ]
 }
