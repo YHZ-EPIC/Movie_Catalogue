@@ -1,5 +1,5 @@
 {
   "rewrites":  [
-    {"source": "^/(?!$|list$).*", "destination": "/src/Components/Error.js"}
+    {"source": "^/(?!$|list$).*", "destination": "/"}
   ]
 }
