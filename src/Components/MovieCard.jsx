@@ -33,52 +33,101 @@ export default function Movie({ myData, genres, apiKey, onClick }) {
   }, [API_URL]);
 
   return (
+    // <div className="Movie">
+    //   <div className="flex flex-wrap flex--movie p-4 justify-center items-center">
+    //     {/* Image  */}
+    //     <div className="w-full md:w-full max-w-4xl rounded overflow-hidden shadow-lg m-4 flex justify-between">
+    //       <div className="md:flex-shrink-0">
+    //         <img
+    //           className="w-full md:max-w-md"
+    //           src={
+    //             myData.poster_path
+    //               ? `https://image.tmdb.org/t/p/w500${myData.poster_path}`
+    //               : "https://via.placeholder.com/400"
+    //           }
+    //           alt={`${myData.title} Poster`}
+    //         />
+    //       </div>
+
+    //       <div className="flex flex-col flex-grow px-8 py-4 bg-color-333">
+    //         {/* Title  */}
+    //         <h3 className="font-bold text-4xl md:text-2xl lg:text-2xl text-gray-200 movie--title">
+    //           {myData.title}
+    //         </h3>
+
+    //         {/* Year and Type */}
+    //         <span className="font-bold text-justify text-gray-400 movie--type">
+    //           {releaseYear ? releaseYear : "N/A"} <br />
+    //           Rating : {Rating} <br />
+    //           Genre : {myData.genre_ids.map((id) => genres[id]).join(", ")}
+    //         </span>
+
+    //         {/* Synopsis  */}
+    //         <div className="flex-grow text-justify mt-4">{myData.overview}</div>
+
+    //         {/* Buttons  */}
+    //         <div className="button-container flex justify-between">
+    //           <VideoPopup title={myData.title} videoKey={trailerKey} />
+
+    //           <button
+    //             className="bg-orange-200 text-orange-700"
+    //             onClick={() => onClick(myData)}
+    //           >
+    //             Add to Watch List
+    //           </button>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
+
     <div className="Movie">
-      <div className="flex flex-wrap flex--movie p-4 justify-center items-center">
-        {/* Image  */}
-        <div className="w-full md:w-full max-w-4xl rounded overflow-hidden shadow-lg m-4 flex justify-between">
-          <div className="md:flex-shrink-0">
-            <img
-              className="w-full md:max-w-md"
-              src={
-                myData.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${myData.poster_path}`
-                  : "https://via.placeholder.com/400"
-              }
-              alt={`${myData.title} Poster`}
-            />
-          </div>
+  <div className="flex flex-wrap flex--movie p-4 justify-center items-center">
+    {/* Image and Text Container */}
+    <div className="w-full md:w-full max-w-4xl rounded overflow-hidden shadow-lg m-4 flex flex-col md:flex-row">
+      {/* Poster */}
+      <div className="md:flex-shrink-0 md:order-1">
+        <img
+          className="w-full md:max-w-md"
+          src={
+            myData.poster_path
+              ? `https://image.tmdb.org/t/p/w500${myData.poster_path}`
+              : "https://via.placeholder.com/400"
+          }
+          alt={`${myData.title} Poster`}
+        />
+      </div>
 
-          <div className="flex flex-col flex-grow px-8 py-4 bg-color-333">
-            {/* Title  */}
-            <h3 className="font-bold text-4xl md:text-2xl lg:text-2xl text-gray-200 movie--title">
-              {myData.title}
-            </h3>
+      {/* Text */}
+      <div className="flex flex-col flex-grow px-8 py-4 bg-color-333 md:order-2">
+        {/* Title */}
+        <h3 className="font-bold text-4xl md:text-2xl lg:text-2xl text-gray-200 movie--title">
+          {myData.title}
+        </h3>
 
-            {/* Year and Type */}
-            <span className="font-bold text-justify text-gray-400 movie--type">
-              {releaseYear ? releaseYear : "N/A"} <br />
-              Rating : {Rating} <br />
-              Genre : {myData.genre_ids.map((id) => genres[id]).join(", ")}
-            </span>
+        {/* Year and Type */}
+        <span className="font-bold text-justify text-gray-400 movie--type">
+          {releaseYear ? releaseYear : "N/A"} <br />
+          Rating : {Rating} <br />
+          Genre : {myData.genre_ids.map((id) => genres[id]).join(", ")}
+        </span>
 
-            {/* Synopsis  */}
-            <div className="flex-grow text-justify mt-4">{myData.overview}</div>
+        {/* Synopsis */}
+        <div className="flex-grow text-justify mt-4">{myData.overview}</div>
 
-            {/* Buttons  */}
-            <div className="button-container flex justify-between">
-              <VideoPopup title={myData.title} videoKey={trailerKey} />
-
-              <button
-                className="bg-orange-200 text-orange-700"
-                onClick={() => onClick(myData)}
-              >
-                Add to Watch List
-              </button>
-            </div>
-          </div>
+        {/* Buttons */}
+        <div className="button-container flex justify-between mt-4">
+          <VideoPopup title={myData.title} videoKey={trailerKey} />
+          <button
+            className="bg-orange-200 text-orange-700"
+            onClick={() => onClick(myData)}
+          >
+            Add to Watch List
+          </button>
         </div>
       </div>
     </div>
+  </div>
+</div>
   );
 }
