@@ -88,7 +88,7 @@ export default function Movie({ myData, genres, apiKey, onClick }) {
       {/* Poster */}
       <div className="md:flex-shrink-0 md:order-1">
         <img
-          className="w-full md:max-w-md"
+          className="w-full h-auto md:max-w-md max-w-full"
           src={
             myData.poster_path
               ? `https://image.tmdb.org/t/p/w500${myData.poster_path}`
