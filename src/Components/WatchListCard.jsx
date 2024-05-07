@@ -20,7 +20,7 @@ export default function WatchListCard({ favorites, onRemove }) {
       {/* Poster */}
       <div className="md:flex-shrink-0 md:order-1">
         <img
-          className="w-1/2 h-auto md:max-w-md max-w-full"
+          className="w-full h-auto md:max-w-md max-w-full"
           src={
             favorites.poster_path
               ? `https://image.tmdb.org/t/p/w500${favorites.poster_path}`
