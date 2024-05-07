@@ -39,7 +39,7 @@ export default function Movie({ myData, genres, apiKey, onClick }) {
         <div className="w-full md:w-full max-w-4xl rounded overflow-hidden shadow-lg m-4 flex justify-between">
           <div className="md:flex-shrink-0">
             <img
-              className="md:w-56"
+              className="w-full md:max-w-md"
               src={
                 myData.poster_path
                   ? `https://image.tmdb.org/t/p/w500${myData.poster_path}`
