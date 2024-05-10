@@ -26,6 +26,34 @@ export default function Navbar() {
             Watch List
           </NavLink>
 
+            {/* Add your details here */}
+          <div className="flex items-center space-x-4">
+            <span className="text-white">Your Name</span>
+            <a
+              href="mailto:your.email@example.com"
+              className="text-white hover:text-gray-300"
+            >
+              your.email@example.com
+            </a>
+            <a
+              href="https://github.com/yourgithub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-gray-300"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/yourlinkedin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-gray-300"
+            >
+              LinkedIn
+            </a>
+          </div>
+          {/* End of your details */}
+
           {/* <NavLink to="/about" className=" hover:text-gray-300">
             About
           </NavLink>
