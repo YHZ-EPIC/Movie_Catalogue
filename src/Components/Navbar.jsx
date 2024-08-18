@@ -8,7 +8,7 @@ export default function Navbar() {
 					<img
 						alt='Home'
 						title='Home'
-						src='../../public/cinema.png'
+						src='/cinema.png'
 						className='rounded-lg hover:border-2 h-14 w-14 hover:border-spacing-2 hover:bg-gray-300'
 					/>
 				</NavLink>
